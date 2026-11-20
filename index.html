@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4444♡</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    color: white;
+    background:
+        linear-gradient(rgba(15,10,20,.48), rgba(15,10,20,.68)),
+        url("fon.jpg") center/cover fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 15px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 110%;
+    max-width: 760px;
+    margin-left: -35px;
+    text-align: center;
+    animation: appear 1.5s ease;
+}
+
+h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    font-weight: normal;
+    margin-bottom: 12px;
+    text-shadow: 0 3px 15px #000;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 35px;
+    opacity: .9;
+}
+
+.memories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.memory {
+    padding: 10px;
+    background: rgba(255,255,255,.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 18px;
+    box-shadow: 0 8px 30px #0005;
+    transition: .4s;
+}
+
+.memory:hover {
+    transform: translateY(-7px);
+}
+
+.memory img,
+.memory video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.caption {
+    padding: 12px 0 3px;
+    font-size: 14px;
+}
+
+.message {
+    margin-top: 5px;
+    padding: 6px 6px;
+    background: rgba(255,255,255,.13);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px #0004;
+    line-height: 1.8;
+    font-size: 16px;
+    white-space: pre-line;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ffd4e3;
+    opacity: 0;
+    pointer-events: none;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    15% {
+        opacity: .7;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(40deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 480px) {
+    .container {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .memories {
+        gap: 10px;
+    }
+
+    .memory {
+        padding: 7px;
+    }
+
+    .memory img,
+    .memory video {
+        height: 230px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>weeee♡</h1>
+   
+    <div class="memories">
+
+        <div class="memory">
+            <img src="phot22.jpg" alt="">
+            <div class="caption">♡</div>
+        </div>
+
+        <div class="memory">
+            <video src="vidd.mov" controls playsinline preload="metadata"></video>
+            <div class="caption">♡</div>
+        </div>
+
+    </div>
+
+    <div class="message">
+        <h3 style="font-weight:normal; margin-bottom:15px;">
+           один из наших вечеров
+        </h3>
+
+    </div>
+
+    <p style="margin-top:25px; opacity:.85;">
+        С любовью ♡
+    </p>
+
+</div>
+
+<script>
+for (let i = 0; i < 14; i++) {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "♡";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDelay = Math.random() * 8 + "s";
+    heart.style.fontSize = (14 + Math.random() * 18) + "px";
+
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
+
